@@ -5,8 +5,6 @@
 
 import re
 from typing import Optional
-import pyperclip
-import typing
 
 
 def imitate_strip(given_text: str, optional_regex: Optional[str] = None):
