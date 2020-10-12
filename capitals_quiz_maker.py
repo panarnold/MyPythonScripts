@@ -30,18 +30,18 @@ for quizNum in range(1,15):
     quizFile.write((' ' * 20) + 'quiz Know Capitals of Countries (quiz %s)' % quizNum)
     quizFile.write('\n\n')
 
-    states = list(capitals.keys())
-    random.shuffle(states)
+    capitals = list(capitals.keys())
+    random.shuffle(capitals)
 
     for question_num in range(1, len(capitals)):
-        correct_answer = capitals[states[question_num]]
+        correct_answer = capitals[capitals[question_num]]
         wrong_answers = list(capitals.values())
         del wrong_answers[wrong_answers.index(correct_answer)]
         wrong_answers = random.sample(wrong_answers, 3)
         answer_options = wrong_answers + [correct_answer]
         random.shuffle(answer_options)
 
-        quizFile.write('%s. What is the capital of %s?\n' % (question_num, states[question_num]))
+        quizFile.write('%s. What is the capital of %s?\n' % (question_num, capitals[question_num]))
         for i in range(4):
             quizFile.write('    %s. %s\n' % ('ABCD'[i], answer_options[i]))
         quizFile.write('\n')
