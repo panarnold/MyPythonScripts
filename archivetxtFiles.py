@@ -16,7 +16,7 @@ def backupTxtToZip(zipFolder):
         for filename in filenames:
             if filename.endswith('.txt'):
                 print(filename)
-                txt_zip.write(os.path.join(folder, filename))
+                txt_zip.write(os.path.join(folder, filename), filename)
     txt_zip.close()
     print('aaand it\'s done')
 
