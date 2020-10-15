@@ -4,12 +4,11 @@
 # spam_006 name, it will change it accordingly into spam_001 and spam_002
 # X 2020 Arnold Cytrowski
 
-import os, re, shutil
+import os, re, shutil, sys
 
 def find_files():
     filelist = []
     current_prefix = re.compile(input('put your prefix here buddy:\n'))
-    abs = os.path.abspath('.')
     
 
     for folder, subfolders, filenames in os.walk('.'):
@@ -35,6 +34,9 @@ def renamer():
             print(f'changing {filename} to {new_filename}')
             shutil.move(filename, new_filename)
             index += 1
+    
+    print('ok my job here is done')
+    sys.exit()
     
 
 
